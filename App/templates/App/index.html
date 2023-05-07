@@ -1,0 +1,179 @@
+{% extends 'main.html' %}
+
+{% load static %}
+        
+
+  {% block content%}
+    <main>
+      <div>
+        <div>
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'assets/img/aymp.jfif' %}" alt="" height="550px" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'assets/img/aymp5.jfif' %}" alt="" height="550px" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'assets/img/aymp6.jfif' %}" alt="" height="550px" width="100%">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="bg-dark mt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 my-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100%" height="200px">
+                                <p class="text-center fs-4 text-info pt-3">Membership Application</p>
+                                <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-info" href="#">LEARN MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <img src="{% static 'assets/img/portfolio-7.jpg'%}" alt="" width="100%" height="200px">
+                                <p class="text-center fs-4 text-info pt-3">Membership Application</p>
+                                <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-info" href="#">LEARN MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <div id="myCarousel1" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#myCarousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="{% static 'assets/img/aymp.jfif' %}" alt=""  height="inherit" width="100%">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="{% static 'assets/img/aymp5.jfif' %}" alt="" width="100%">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="{% static 'assets/img/aymp6.jfif' %}" alt="" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 px-5">
+                        <p class="text-success text-center fs-1">About AYMP</p>
+                        <p>The platform provides guidance and counselling to our youths, from secoundary school leavers to university graduates on different academic and entreprepreneurial issues.</p>
+                    </div>
+                    <div class="col-sm-6 px-5">
+                        <div class="border-bottom mb-4 text-center">
+                            <p class="btn btn-dark text-success fs-4 px-4 py-2 mb-4 fw-bold rounded-0">News & Resources</p>
+                        </div>
+                        <p>Get the latest information and see recent uploads to the site through our News and Resource age. You can also view articles related to this program via the publications page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark mt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 card bg-white my-3">
+                        <div class="card-body">
+                            <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100%" height="200px">
+                            <p class="text-center fs-4 text-info pt-3">Membership Application</p>
+                            <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                            <div class="text-center">
+                                <a class="btn btn-outline-info" href="#">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 card bg-white my-3">
+                        <div class="card-body">
+                            <img src="{% static 'assets/img/portfolio-7.jpg'%}" alt="" width="100%" height="200px">
+                            <p class="text-center fs-4 text-info pt-3">Membership Application</p>
+                            <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                            <div class="text-center">
+                                <a class="btn btn-outline-info" href="#">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 card bg-white my-3">
+                        <div class="card-body">
+                            <img src="{% static 'assets/img/portfolio-9.jpg'%}" alt="" width="100%" height="200px">
+                            <p class="text-center fs-4 text-info pt-3">Membership Application</p>
+                            <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                            <div class="text-center">
+                                <a class="btn btn-outline-info" href="#">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="bg-light text-center pb-4">
+            <div class="pt-4 pb-5">
+                <h1>The Benefits of Joining The Program...</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 px-2">
+                        <div class="pb-5">
+                            <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100px" height="50px">
+                        </div>
+                        <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                    </div>
+                    <div class="col-md-3 px-2">
+                        <div class="pb-5">
+                            <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100px" height="50px">
+                        </div>
+                        <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                    </div>
+                    <div class="col-md-3 px-2">
+                        <div class="pb-5">
+                            <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100px" height="50px">
+                        </div>
+                        <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                    </div>    
+                    <div class="col-md-3 px-2">
+                        <div class="pb-5">
+                            <img src="{% static 'assets/img/portfolio-4.jpg'%}" alt="" width="100px" height="50px">
+                        </div>
+                        <p>There's never been a better time to be an AYMP member. Join Now!</p>
+                    </div>            
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+  {% endblock content%}
