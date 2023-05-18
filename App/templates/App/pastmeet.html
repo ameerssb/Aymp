@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+
+{% load static %}
+{% load embed_video_tags %}        
+
+{% block content%}
+
+    <main id="main">
+
+    <!-- ======= Search Results ======= -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="section-title text-left">
+              <h3>Past Meetings</h3>
+            </div>
+            {% for obj in pastmeet%}
+            <div class="d-md-flex py-3">
+              <div class="col-md-5 pe-md-3">
+                {% video obj.video '100% x 320px' %}              
+              </div>
+              <div class="col-md-7">
+                <h4><a href="#">{{obj.headline}}</a></h4>
+                <p class="fs-6"><span class="text-danger fw-bold">Date: </span>{{obj.date}}</p>
+                {% if obj.body %}
+                <p class="justify-content-between">{{obj.body | linebreaksbr | truncatechars:300}}</p>
+                {% endif %}
+                <div class="news-meta"><span class="text-success">Posted on: </span><span>{{obj.created|timesince}} Ago</span></div>
+              </div>
+            </div>
+            {% endfor %}
+
+            <!-- Paging -->
+            <div class="text-start py-4">
+              <div class="custom-pagination">
+                {% if pastmeet.has_previous %}
+                <a href="?page=1" class="prev">&laquo; first</a>
+                <a href="?page={{ pastmeet.previous_page_number }}" class="prev">Previous</a>
+                <a href="?page={{ pastmeet.previous_page_number }}">{{pastmeet.previous_page_number}}</a>
+                {% else %}
+                <bold class="prev">Previous</bold>
+                {% endif %}
+                {% if pastmeet.number%}                
+                <a href="?page={{ pastmeet.number }}" class="active">{{ pastmeet.number }}</a>
+                {% endif%}
+                {% if pastmeet.has_next%}
+                <a href="?page={{ pastmeet.next_page_number }}">{{ pastmeet.next_page_number }}</a>
+                <a href="?page={{ pastmeet.next_page_number }}" class="next">Next</a>
+                <a href="?page={{ pastmeet.paginator.num_pages }}" class="next">last &raquo;</a>
+                {% else %}
+                <bold class="prev">Next</bold>
+                {% endif %}
+              </div>
+            </div><!-- End Paging -->
+
+          </div>
+
+          <div class="col-md-2">
+            <!-- ======= Sidebar ======= -->
+            <div class="side-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Top News</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  {% for obj in recent %}
+                  {% if obj.urls %}      
+                  <div class="news border-bottom">
+                    <h2 class="mb-2"><a href="{% url 'News' urls=obj.urls %}">{{obj.headline | linebreaks | truncatechars:50}}</a></h2>
+                    <div class="news-meta"><span>{{obj.created|date}}</span></div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div> <!-- End Latest -->
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section> <!-- End Search Result -->
+
+    </main><!-- End #main -->
+    
+{% endblock content%}

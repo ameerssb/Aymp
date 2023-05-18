@@ -1,8 +1,13 @@
-# from django.contrib import admin
+from django.contrib import admin
+from .models import HomeInfo,Social,PastEvent,UpEvent
 # from .models import User,Post,Department,Footer,Email,Contact,About
 
 # # Register your models here.
 
+admin.site.register(Social)
+admin.site.register(HomeInfo)
+admin.site.register(PastEvent)
+admin.site.register(UpEvent)
 # class PostAdmin(admin.ModelAdmin):
 #     exclude = ('user',)
 #     def save_model(self, request, obj, form, change):

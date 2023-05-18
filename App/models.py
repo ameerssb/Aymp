@@ -1,5 +1,6 @@
 # from django.conf import settings
-# from django.db import models
+from django.db import models
+from embed_video.fields import EmbedVideoField
 # from django.contrib.auth.hashers import make_password
 # from django.contrib.auth.models import AbstractUser
 # from django.utils.text import slugify
@@ -34,6 +35,54 @@
 # 	def save(self, *args, **kwargs):
 # 		self.password = make_password(self.password)
 # 		super(User, self).save(*args, **kwargs)	
+
+class Social(models.Model):
+	office = models.CharField(max_length=250, default="#", blank=True)
+	mail = models.CharField(max_length=250, default="#", blank=True)
+	twitter=models.CharField(max_length=250, default="#", blank=True)
+	facebook=models.CharField(max_length=250, default="#", blank=True)
+	youtube=models.CharField(max_length=250, default="#", blank=True)
+	instagram=models.CharField(max_length=250, default="#", blank=True)
+	telegram=models.CharField(max_length=250, default="#", blank=True)
+	linkedin=models.CharField(max_length=250, default="#", blank=True)
+	tiktok=models.CharField(max_length=250, default="#", blank=True)
+	created = models.DateTimeField(auto_now_add=True, auto_created=True)
+	updated = models.DateTimeField(auto_now=True, auto_created=True)
+
+	def __str__(self):
+		return str(self.id)
+
+class HomeInfo(models.Model):
+	body = models.TextField(blank=True)
+	image = models.FileField(blank=True)
+	video = EmbedVideoField(blank=True)
+	created = models.DateTimeField(auto_now_add=True, auto_created=True)
+	updated = models.DateTimeField(auto_now=True, auto_created=True)
+
+	def __str__(self):
+		return str(self.id)
+
+class UpEvent(models.Model):
+	body = models.TextField(blank=True)
+	image = models.FileField(blank=True)
+	created = models.DateTimeField(auto_now_add=True, auto_created=True)
+	updated = models.DateTimeField(auto_now=True, auto_created=True)
+
+	def __str__(self):
+		return str(self.id)
+
+class PastEvent(models.Model):
+    session = models.IntegerField(default=0)
+    headline = models.CharField(max_length=250,blank=True)
+    body = models.TextField(blank=True)
+    video = EmbedVideoField(blank=True)
+    date = models.DateTimeField(null=True)    
+    created = models.DateTimeField(auto_now_add=True, auto_created=True)
+    updated = models.DateTimeField(auto_now=True, auto_created=True)
+    
+    def __str__(self):
+        return str(self.id)
+
 
 # class Post(models.Model):
 # 	user=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
